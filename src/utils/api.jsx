@@ -1,17 +1,17 @@
 var Fetch = require('whatwg-fetch');
-var rootUrl = 'https://api.imgur.com3/';
-var apiKey = '2a0c5eba0dfe964';
+var rootUrl = 'https://api.imgur.com/3/';
+var apiKey = 'e884af38cbf7bf5';
 // var apiKey = '430d6820d865788';
 
-module.exports = window.api = {
+module.exports = {
   get: function(url) {
     return fetch(rootUrl + url, {
       headers: {
         'Authorization': 'Client-ID ' + apiKey
       }
     })
-    .then(function(response) {
-      console.log(response);
-  })
+    .then(function(response){
+      return response.json()
+    })
   }
 };
