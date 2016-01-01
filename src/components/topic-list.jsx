@@ -1,5 +1,5 @@
 var React = require('react');
-var Api = require('../utils/api');
+var Api = require('../utils/api.jsx');
 
 module.exports = React.createClass({
   getInitialState: function() {
@@ -7,7 +7,7 @@ module.exports = React.createClass({
       topics: []
     }
   },
-  componentsWillMount: function() {
+  componentWillMount: function() {
     Api.get('topics/defaults')
     .then(function(data){
       this.setState({
@@ -24,7 +24,7 @@ module.exports = React.createClass({
   renderTopics: function() {
     return this.state.topics.map(function(topic){
       return <li>
-        {topic}
+        {topic.description}
       </li>
     });
   }
