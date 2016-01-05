@@ -7,7 +7,7 @@ module.exports = Reflux.createStore({
   getTopics: function() {
     return Api.get('topics/defaults')
       .then(function(data){
-        this.topics = json.data;
+        this.topics = data.data;
         this.triggerChange();
       }.bind(this));
   },
