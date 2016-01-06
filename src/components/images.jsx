@@ -1,30 +1,30 @@
 var React = require('react');
 var Reflux = require('reflux')
-var TopicStore = require('../stores/topic-store');
+var ImageStore = require('../stores/image-store');
 var Actions = require('../actions');
 var ReactRouter = require('react-router');
 var Link = ReactRouter.Link;
 
 module.exports = React.createClass({
   mixins: [
-    Reflux.listenTo(TopicStore, 'onChange')
+    Reflux.listenTo(ImageStore, 'onChange')
   ],
   getInitialState: function() {
     return {
-      topics: []
+      images: []
     }
   },
   componentWillMount: function() {
-    Actions.getTopics()
+    Actions.getImages()
   },
   render: function() {
     return <div className="list-group">
-      {this.renderTopics()}
+      {this.renderImages()}
     </div>
   },
-  renderTopics: function() {
-    return this.state.topics.slice(0, 4).map(function(topic){
-      return <Link to={"topics/" + topic.id} className="list-group-item" key={topic.id}>
+  renderImages: function() {
+    return this.state.topics.slice(0, 4).map(function(image){
+      return <Link to={"image/" + image.id} className="list-group-item" key={topic.id}>
         <h4>{topic.name}</h4>
         <p>{topic.description}</p>
       </Link>

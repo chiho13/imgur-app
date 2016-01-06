@@ -6,8 +6,8 @@ module.exports = Reflux.createStore({
   listenables: [Actions],
   getTopics: function() {
     return Api.get('topics/defaults')
-      .then(function(data){
-        this.topics = data.data;
+      .then(function(json){
+        this.topics = json.data;
         this.triggerChange();
       }.bind(this));
   },
