@@ -22,7 +22,7 @@ module.exports = React.createClass({
   },
   render: function() {
 
-    return <div className="col-sm-6">
+    return <div className="topic">
         {this.renderImages()}
       </div>
   },
