@@ -1,19 +1,71 @@
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin bg-gradient-t2b($start-colour, $end-colour) {
+    background-color: $start-colour;
+    background-image: -webkit-gradient(linear, left top, left bottom, from($start-colour), to($end-colour));
+    background-image: -webkit-linear-gradient(top, $start-colour, $end-colour);
+    background-image:    -moz-linear-gradient(top, $start-colour, $end-colour);
+    background-image:     -ms-linear-gradient(top, $start-colour, $end-colour);
+    background-image:      -o-linear-gradient(top, $start-colour, $end-colour);
+    background-image:         linear-gradient(top, $start-colour, $end-colour);
+    filter:            progid:DXImageTransform.Microsoft.gradient(start-colourStr='#{$start-colour}', end-colourStr='#{$end-colour}');
+}
+
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+body {
+ 
+
+ @include bg-gradient-t2b(#512E5C, #8A82BD);
+}
+
+
 .image-preview {
   display:inline-block;
   position:relative;
+  margin:5px;
+   border: 2px solid #aaa;
 
   .inset {
     position:absolute;
     bottom: 0px;
+    padding:6px;
     left:0px;
     width: 100%;
     background-color: black;
     text-align: center;
     opacity: 0.8;
     color: white;
+    @include transition(all .3s ease);
+
   }
 
-  .glyphicon {
+  .imageTitle {
+    padding-top: 3px;
+  }
+
+ .glyphicon-thumbs-up {
+    margin-left:10px;
+  }
+  .glyphicon-arrow-down {
+    margin-left: 4px;
+  }
+
+
+  .glyphicon-play  {
     position:absolute;
     top:50%;
     left:50%;
@@ -24,15 +76,19 @@
   }
 
   img {
-    height: 220px;
-    width: 220px;
+    height: 200px;
+    width: 200px;
     display:inline-block;
   }
 }
 
+.image-preview:hover {
+  border: 2px solid #2287F2;
+}
+
 video {
-  height:220px;
-  width:220px;
+  height:200px;
+  width:200px;
   vertical-align: middle;
   background-color: black;
 }

@@ -1,4 +1,6 @@
 var React = require('react');
+var ReactRouter = require('react-router');
+var Link = ReactRouter.Link;
 
 module.exports = React.createClass({
   getInitialState: function() {
@@ -7,20 +9,25 @@ module.exports = React.createClass({
     }
   },
   render: function() {
-    return <div className="image-preview"
+    return <Link 
+      to={"images/" + this.props.id}
+    className="image-preview"
       onMouseEnter={this.handleMouseEnter}
       onMouseLeave={this.handleMouseLeave}
       >
       {this.props.animated && this.state.hovering ? this.video() : this.image()}
       {this.props.animated && !this.state.hovering ? this.icon() : null}
       {this.state.hovering ? this.inset():null}
-    </div>
+    </Link>
   },
   inset:function() {
+    var percentageLike = (this.props.ups - this.props.downs) / this.props.ups * 100;
+    var percentDec = percentageLike.toFixed(1);
     return <div className="inset">
-      Views: {this.props.views}
-      <br />
-      Upvotes: {this.props.ups}
+        <p className="imageTitle">{this.props.title} </p>
+      <span className="glyphicon glyphicon-eye-open"></span> {this.props.views}
+      <span className="glyphicon glyphicon-thumbs-up"></span> {percentDec + '%'}
+
     </div>
   },
   image: function() {
