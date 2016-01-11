@@ -1,21 +1,4 @@
-@mixin transition($args...) {
-  -webkit-transition: $args;
-  -moz-transition: $args;
-  -ms-transition: $args;
-  -o-transition: $args;
-  transition: $args;
-}
-
-@mixin bg-gradient-t2b($start-colour, $end-colour) {
-    background-color: $start-colour;
-    background-image: -webkit-gradient(linear, left top, left bottom, from($start-colour), to($end-colour));
-    background-image: -webkit-linear-gradient(top, $start-colour, $end-colour);
-    background-image:    -moz-linear-gradient(top, $start-colour, $end-colour);
-    background-image:     -ms-linear-gradient(top, $start-colour, $end-colour);
-    background-image:      -o-linear-gradient(top, $start-colour, $end-colour);
-    background-image:         linear-gradient(top, $start-colour, $end-colour);
-    filter:            progid:DXImageTransform.Microsoft.gradient(start-colourStr='#{$start-colour}', end-colourStr='#{$end-colour}');
-}
+@import 'mixins';
 
 html {
     height: 100%;
@@ -29,7 +12,7 @@ body {
 body {
  
 
- @include bg-gradient-t2b(#512E5C, #8A82BD);
+ @include bg-gradient-t2b(#422E5C, #2E5A5C);
 }
 
 
@@ -79,6 +62,9 @@ body {
     height: 200px;
     width: 200px;
     display:inline-block;
+    object-fit:cover;
+    -o-object-fit:cover;
+
   }
 }
 

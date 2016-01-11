@@ -4,6 +4,8 @@ var Link = Router.Link;
 var Actions = require('../actions');
 var TopicStore = require('../stores/topic-store');
 var Reflux = require('reflux');
+// var Countdown = require('react-the-final-countdown');
+// <Countdown min = {1} msg="Close the fridge" />
 
 module.exports = React.createClass({
   mixins: [
@@ -21,17 +23,20 @@ module.exports = React.createClass({
     return <nav className="navbar navbar-default header">
       <div className="container-fluid">
         <Link to="/" className="navbar-brand">
-          Imgur Browser
+            take a break
         </Link>
+        
 
         <ul className="nav navbar-nav navbar-right">
+
           {this.renderTopics()}
         </ul>
       </div>
     </nav>
+
   },
   renderTopics: function() {
-    return this.state.topics.slice(3, 7).map(function(topic) {
+    return this.state.topics.slice(2, 7).map(function(topic) {
       return <li key={topic.id}>
         <Link activeClassName="active" to={"topics/" + topic.id}>
           {topic.name}

@@ -1,7 +1,7 @@
 var React = require('react');
 var Routes = require('./routes');
-// var ReactDom = require('react-dom');
+var ReactDom = require('react-dom');
 var Api = require('./utils/api');
 
 
-React.render(Routes, document.querySelector('.container'));
+ReactDom.render(Routes, document.querySelector('.container'));

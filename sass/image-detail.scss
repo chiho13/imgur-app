@@ -1,0 +1,51 @@
+.image-detail {
+	 font-family: 'Helvetica Neue', sans-serif;
+
+	.panel-default {
+		background: rgba(34, 34, 34, 0.75);
+	}
+
+	.panel-body {
+		text-align:center;
+
+	}
+
+	img, video {
+		max-width: 100%;
+	}
+
+	video {
+		width: 50%;
+		height:300px;
+	}
+	.panel-heading {
+
+	h3, h4, h5 {
+	padding:1px;
+	text-indent:10px;
+	}
+
+	h3 {
+		margin:0;
+		padding: 5px
+	}
+	}
+
+
+}
+
+.comment-box {
+	text-indent: 15px;
+	background: #eee;
+	color: #222;
+	}
+
+.badge {
+	padding: 4px 0px;
+    padding-right: 11px;
+    background: #2E5A5C
+}
+
+.commentlist {
+	background: #222;
+}

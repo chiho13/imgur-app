@@ -1,5 +1,91 @@
-.header {
-  .active {
-    font-weight:900;
-  }
+
+@font-face {
+    font-family: vag;
+    src: url(../fonts/vag.ttf);
 }
+
+.header {
+
+	.navbar-right {
+
+		a {
+		color: #333;
+		}
+  		.active {
+  		  font-weight:900;
+  		}
+  	}
+
+}
+
+
+.navbar-default	{
+	
+	.navbar-brand {
+		font-family: vag;
+		font-size: 22px;
+		color: #444;
+	}
+}
+
+.navbar-default {
+		.navbar-nav > {
+			li > {
+				 a {
+    				color: #333;
+    				font-family: 'Helvetica', sans-serif;
+    				}
+
+    				a:hover {
+    					background: rgba(66,46, 92, 0.3);
+    					border-radius: 2px;
+
+    				}	
+    			}
+    	}	
+}	
+
+.footer {
+	color: #ccc;
+	text-align: center;
+	position:relative;
+	bottom: 0px;
+	margin-bottom: 5px;
+	font-family: 'Helvetica Neue', sans-serif;
+
+	a {
+		color: #eee;
+	}
+
+	a:hover {
+		color: #ccc;
+		text-decoration:none;
+	}
+
+	i {
+		color: crimson;
+		font-size: 13px;
+	}
+}	
+
+.list-group-item {
+	font-family: 'Helvetica Neue', sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+.container {
+  min-height: 100%;
+  margin-bottom: -50px; 
+}
+.container:after {
+  content: "";
+  display: block;
+}
+.footer, .container:after {
+  height: 50px; 
+}
+		
+
+
