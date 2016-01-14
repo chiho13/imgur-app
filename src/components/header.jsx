@@ -1,9 +1,14 @@
 var React = require('react');
 var Router = require('react-router');
 var Link = Router.Link;
+var Navbar = require('react-bootstrap').Navbar;
+var Nav = require('react-bootstrap').Nav;
+var NavItem = require('react-bootstrap').NavItem;
 var Actions = require('../actions');
 var TopicStore = require('../stores/topic-store');
 var Reflux = require('reflux');
+
+// var Button = require('react-bootstrap').Button;
 // var Countdown = require('react-the-final-countdown');
 // <Countdown min = {1} msg="Close the fridge" />
 
@@ -20,19 +25,26 @@ module.exports = React.createClass({
     Actions.getTopics();
   },
   render: function() {
-    return <nav className="navbar navbar-default header">
-      <div className="container-fluid">
-        <Link to="/" className="navbar-brand">
-            take a break
-        </Link>
-        
-
-        <ul className="nav navbar-nav navbar-right">
-
-          {this.renderTopics()}
-        </ul>
-      </div>
-    </nav>
+    return <Nav>
+            <Navbar>
+              <Navbar.Header>
+                <Navbar.Brand>
+                   <Link to="/" >
+                      take a break
+                  </Link>
+                </Navbar.Brand>
+                 <Navbar.Toggle />
+              </Navbar.Header>
+              <Navbar.Collapse>
+                <Nav pullRight>
+                  {this.renderTopics()}
+                
+                </Nav>
+     
+               </Navbar.Collapse>
+            </Navbar>
+  
+          </Nav>
 
   },
   renderTopics: function() {

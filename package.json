@@ -21,6 +21,7 @@
     "lodash": "^3.10.1",
     "node-notifier": "^4.2.1",
     "react": "^0.14.6",
+    "react-bootstrap": "^0.28.2",
     "react-countdown-clock": "^1.0.5",
     "react-dom": "^0.14.6",
     "react-ellipsify": "^0.4.0",

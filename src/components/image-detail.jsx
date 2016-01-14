@@ -30,7 +30,7 @@ module.exports = React.createClass({
         <div className="panel-heading">
           <h4>{this.state.image.title}</h4>
         </div>
-        <div className="panel-body">
+        <div className="panel-body detail-body">
           {this.renderImage()}
         </div>
         <div className="panel-footer">

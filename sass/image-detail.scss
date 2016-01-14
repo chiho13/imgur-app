@@ -10,19 +10,28 @@
 
 	}
 
-	img, video {
-		max-width: 100%;
+	.detail-body {
+		min-height:10rem;
+	}
+
+	img {
+		max-width: 60%;
+		height: auto;
+		vertical-align:middle;
 	}
 
 	video {
-		width: 50%;
-		height:300px;
+		max-width:100%;
+		width: 60%;
+		height:auto;
+
 	}
+
 	.panel-heading {
 
 	h3, h4, h5 {
 	padding:1px;
-	text-indent:10px;
+	
 	}
 
 	h3 {
@@ -35,17 +44,36 @@
 }
 
 .comment-box {
-	text-indent: 15px;
+	
 	background: #eee;
 	color: #222;
+
 	}
 
 .badge {
 	padding: 4px 0px;
-    padding-right: 11px;
+	width: 34px;
+    
     background: #2E5A5C
 }
 
 .commentlist {
 	background: #222;
+}
+
+@media(max-width:458px) {
+	.image-detail {
+ 		img, video {
+ 			max-width:100%;
+ 		}
+
+ 		video {
+ 			width:100%;
+ 			height:auto;
+ 		}
+
+ 		.detail-body {
+ 			min-height: auto;
+ 		}
+ 	}
 }
