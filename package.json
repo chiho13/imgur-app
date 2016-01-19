@@ -36,5 +36,10 @@
     "watchify": "^2.4.0",
     "whatwg-fetch": "^0.10.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "gulp-babel": "^6.1.1",
+    "gulp-minify-css": "^1.2.3",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.1"
+  }
 }
