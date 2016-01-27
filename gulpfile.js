@@ -9,7 +9,7 @@ var server = require('gulp-server-livereload');
 var concat = require('gulp-concat');
 var sass = require('gulp-sass');
 var watch = require('gulp-watch');
-var minifycss = require( 'gulp-minify-css' );
+var cssnano = require('gulp-cssnano');
 var rename = require( 'gulp-rename' );
 var uglify = require('gulp-uglify');
 
@@ -88,7 +88,7 @@ gulp.task('sass', function () {
     .pipe(sass().on('error', sass.logError))
     .pipe(concat('style.css'))
     .pipe(gulp.dest('./'))
-    .pipe( minifycss() )
+    .pipe( cssnano() )
     .pipe( rename( { suffix: '.min' } ) )
     .pipe( gulp.dest( './' ) );
 });
