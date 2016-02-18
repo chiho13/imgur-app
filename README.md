@@ -1,4 +1,4 @@
-Imgur App
+Imgur Browser
 ====
 
 ###Getting Started###
